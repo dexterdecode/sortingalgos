@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Bubble Sorting Algorithm</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+
+    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <header role="banner">
+
+      <nav class="navbar navbar-expand-md navbar-dark bg-light">
+        <div class="container">
+          <a class="navbar-brand absolute" href="index.html">Sortingalgos</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse navbar-light" id="navbarsExample05">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="courses.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Algorithms</a>
+                <div class="dropdown-menu" aria-labelledby="dropdown04">
+                  <a class="dropdown-item" href="#">Bubble Sort</a>
+                  <a class="dropdown-item" href="insertion.html">Insertion Sort</a>
+                  <a class="dropdown-item" href="selection.html">Selection Sort</a>
+                </div>
+
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- END header -->
+
+    <section class="site-hero site-hero-innerpage overlay" data-stellar-background-ratio="0.5" style="background-image: url(images/big_image_3.jpg);">
+      <div class="container">
+        <div class="row align-items-center site-hero-inner justify-content-center">
+
+          <div class="col-md-8 text-center">
+            <div class="mb-5 element-animate">
+              <h1 class="mb-3">Bubble Sort Algorithm</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- END section -->
+
+
+    <section class="site-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 blog-content">
+            <h1>Bubble Sort Algorithm</h1>
+            <img src="images/Bubble-sort.gif" alt="Girl in a jacket" width="500" height="300">
+            <p class="lead">Bubble sort, sometimes referred to as sinking sort, is a simple sorting algorithm that repeatedly steps through the list, compares adjacent pairs and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted. The algorithm, which is a comparison sort, is named for the way smaller or larger elements "bubble" to the top of the list. Although the algorithm is simple, it is too slow and impractical for most problems even when compared to insertion sort. Bubble sort can be practical if the input is in mostly sorted order with some out-of-order elements nearly in position.</p>
+            <h5>Performance :</h5>
+            <p>Bubble sort has a worst-case and average complexity of О(n2), where n is the number of items being sorted. Most practical sorting algorithms have substantially better worst-case or average complexity, often O(n log n). Even other О(n2) sorting algorithms, such as insertion sort, generally run faster than bubble sort, and are no more complex. Therefore, bubble sort is not a practical sorting algorithm.
+
+The only significant advantage that bubble sort has over most other algorithms, even quicksort, but not insertion sort, is that the ability to detect that the list is sorted efficiently is built into the algorithm. When the list is already sorted (best-case), the complexity of bubble sort is only O(n). By contrast, most other algorithms, even those with better average-case complexity, perform their entire sorting process on the set and thus are more complex. However, not only does insertion sort share this advantage, but it also performs better on a list that is substantially sorted (having a small number of inversions).
+
+Bubble sort should be avoided in the case of large collections. It will not be efficient in the case of a reverse-ordered collection.</p>
+<br>
+            <blockquote><p>Example : </p></blockquote>
+            <img src="images/bubbleeg.png" width="700" height="500">
+            <br>
+            <br>
+            <h5>Working : </h5>
+            <p>Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.</p>
+            <p>Example :</p>
+            <p>Sorting an Array with elements [5, 1, 4, 2, 8]</p>
+            <p>First Pass :</p>
+            <pre>( 5 1 4 2 8 ) –> ( 1 5 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1.
+( 1 5 4 2 8 ) –>  ( 1 4 5 2 8 ), Swap since 5 > 4
+( 1 4 5 2 8 ) –>  ( 1 4 2 5 8 ), Swap since 5 > 2
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ), Now, since these elements are already in order (8 > 5), algorithm does not swap them.</pre>
+<br>
+<p>Second Pass :</p>
+<pre>
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 )
+( 1 4 2 5 8 ) –> ( 1 2 4 5 8 ), Swap since 4 > 2
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 5 8 ) –>  ( 1 2 4 5 8 )
+Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one whole pass without any swap to know it is sorted.</pre>
+<br>
+<p>Third Pass :</p>
+<pre>
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )</pre>
+<br>
+<br>
+<h5>Pseudo Code : </h5>
+<br>
+
+<pre style="color: #1494D3; font-weight: bold;">
+  procedure bubbleSort( list : array of items )
+  loop = list.count;
+
+   for i = 0 to loop-1 do:
+      swapped = false
+
+      for j = 0 to loop-1 do:
+
+         /* compare the adjacent elements */
+         if list[j] > list[j+1] then
+            /* swap them */
+            swap( list[j], list[j+1] )
+            swapped = true
+         end if
+
+      end for
+
+      /*if no number was swapped that means
+      array is sorted now, break the loop.*/
+
+      if(not swapped) then
+         break
+      end if
+
+   end for
+
+end procedure return list
+</pre>
+<br>
+            <p><b>Worst and Average Case Time Complexity:</b> O(n*n). Worst case occurs when array is reverse sorted.</p>
+
+            <p><b>Best Case Time Complexity:</b> O(n). Best case occurs when array is already sorted.</p>
+            <p><b>Auxiliary Space:</b> O(1)</p>
+            <p><b>Boundary Cases:</b> Bubble sort takes minimum time (Order of n) when elements are already sorted.</p>
+            <p><b>Sorting In Place:</b> Yes</p>
+            <p><b>Stable:</b> Yes</p>
+            <br>
+            <p>Due to its simplicity, bubble sort is often used to introduce the concept of a sorting algorithm.
+In computer graphics it is popular for its capability to detect a very small error (like swap of just two elements) in almost-sorted arrays and fix it with just linear complexity (2n). For example, it is used in a polygon filling algorithm, where bounding lines are sorted by their x coordinate at a specific scan line (a line parallel to x axis) and with incrementing y their order changes (two elements are swapped) only at intersections of two lines.</p>
+<br>
+<h5>Watch Video : </h5>
+<br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nmhjrI-aW5o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+          </div>
+          <div class="col-md-4 sidebar">
+            <div class="sidebar-box">
+              <img src="images/bubblesortcon.jpg" alt="Image placeholder" class="img-fluid mb-4">
+              <h3>Bubble Sorting</h3>
+              <p>Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+    <footer class="site-footer" style="background-image: url(images/big_image_3.jpg);">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-4">
+            <h3>About</h3>
+            <p>Sorting is a key to Computer Science theory, but easy to forget. This site is been developed to demonstrate and explain the working of different Sorting Algorithm.</p>
+          </div>
+          <div class="col-md-6 ml-auto">
+            <div class="row">
+              <div class="col-md-4">
+              </div>
+              <div class="col-md-4">
+              </div>
+              <div class="col-md-4">
+                <!--
+                <ul class="list-unstyled">
+                  <li><a href="#">About Us</a></li>
+                  <li><a href="#">Company</a></li>
+                  <li><a href="#">Teachers</a></li>
+                  <li><a href="#">Courses</a></li>
+                  <li><a href="#">Categories</a></li>
+                </ul>
+              -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <p>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- END footer -->
+
+    <!-- loader -->
+    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery-migrate-3.0.0.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
