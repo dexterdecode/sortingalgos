@@ -18,6 +18,23 @@
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/style.css">
   </head>
+  <style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#divv {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
   <body>
 
     <header role="banner">
@@ -138,7 +155,20 @@ i = 4. 6 will move to position after 5, and elements from 11 to 13 will move one
   end procedure
 </pre>
 <br>
+<h4>Insertion Sort Test Area:</h4>
+<div id="divv">
+  <form>
+    <label for="fname">Input :</label>
+    <input type="text" id="in" name="input" placeholder="Enter Numbers Separated By Space">
 
+    <label for="lname">Output :</label>
+    <input type="text" id="out" name="input" placeholder="Sorted Numbers">
+    <br>
+    <p class="btn btn-primary" id="submitt">Sort</p>
+  </form>
+</div>
+<br>
+<br>
             <p><b>Time Complexity:</b>O(n*2)</p>
             <p><b>Auxiliary Space:</b> O(1)</p>
             <p><b>Boundary Cases:</b> Insertion sort takes maximum time to sort if elements are sorted in reverse order. And it takes minimum time (Order of n) when elements are already sorted.</p>
@@ -220,5 +250,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
     <script src="js/main.js"></script>
+    <script>
+  $(document).ready(function(){
+    // Add smooth scrolling to all links
+    $("#submitt").on('click', function(event) {
+
+      var x = document.getElementById("in").value;
+      var res = x.split(" ");
+      res.sort(function(a, b){return a - b});
+      document.getElementById("out").value = res;
+    });
+  });
+  </script>
   </body>
 </html>
